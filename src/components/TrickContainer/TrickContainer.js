@@ -8,7 +8,7 @@ const TrickContainer = ({ tricks }) => {
     <TrickCard
       stance={trick.stance}
       name={trick.name}
-      obsticle={trick.obsticle}
+      obstacle={trick.obstacle}
       tutorial={trick.tutorial}
       key={trick.id}
     />

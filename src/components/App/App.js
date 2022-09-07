@@ -20,12 +20,12 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <main className="App">
         <h1>Sick Trick Wish List</h1>
         <TrickForm/>
         <TrickContainer
         tricks={this.state.tricks}/>
-      </div>
+      </main>
     );
   }
 }

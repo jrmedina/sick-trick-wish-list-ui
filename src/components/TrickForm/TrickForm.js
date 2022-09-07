@@ -22,6 +22,8 @@ class TrickForm extends Component {
   };
 
   handleSubmit = () => {
+    console.log(this.state);
+    
   return fetch("http://localhost:3001/api/v1/tricks", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -53,6 +55,7 @@ class TrickForm extends Component {
           name="stance"
           value={this.state.stance}
           onChange={this.handleInput}
+          className="stance"
         >
           <option value="switch">Switch</option>
           <option value="regular">Regular</option>
@@ -64,6 +67,7 @@ class TrickForm extends Component {
           name="name"
           placeholder="Name of Trick"
           onChange={this.handleInput}
+          className="name"
         ></input>
 
         <label>Choose your Obsticle:</label>
@@ -72,6 +76,7 @@ class TrickForm extends Component {
           name="obstacle"
           value={this.state.obstacle}
           onChange={this.handleInput}
+          className="obstacle"
         >
           <option value="ledge">Ledge</option>
           <option value="flat">Flat</option>
@@ -86,6 +91,7 @@ class TrickForm extends Component {
           name="tutorial"
           value={this.state.tutorial}
           onChange={this.handleInput}
+          className="tutorial"
         ></input>
         <button type="button" onClick={this.handleSubmit}>
           Send It!
