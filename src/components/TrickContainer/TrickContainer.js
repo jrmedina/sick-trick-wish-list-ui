@@ -10,6 +10,7 @@ const TrickContainer = ({ tricks }) => {
       obstacle={trick.obstacle}
       tutorial={trick.tutorial}
       key={trick.id}
+   
     />
   ));
   return <div className="TrickContainer">{trickCards}</div>;

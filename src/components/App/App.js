@@ -1,6 +1,6 @@
 import { Component } from "react";
 import "./App.css";
-import { getData } from "../apiCalls";
+import { getData, postTrick } from "../apiCalls";
 import TrickContainer from "../TrickContainer/TrickContainer";
 import TrickForm from "../TrickForm/TrickForm";
 
@@ -18,11 +18,19 @@ class App extends Component {
     });
   };
 
+  addTrick = (trick) => {
+    postTrick(trick).then(() => {
+      getData()
+        .then((data) => this.setState({ tricks: data[0] }))
+        .catch((err) => console.log(err));
+    });
+  };
+
   render() {
     return (
       <main className="App">
         <h1>Sick Trick Wish List</h1>
-        <TrickForm />
+        <TrickForm addTrick={this.addTrick} />
         <TrickContainer tricks={this.state.tricks} />
       </main>
     );

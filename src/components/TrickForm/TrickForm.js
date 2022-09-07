@@ -22,25 +22,7 @@ class TrickForm extends Component {
   };
 
   handleSubmit = () => {
-    return fetch("http://localhost:3001/api/v1/tricks", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        stance: this.state.stance,
-        name: this.state.name,
-        obstacle: this.state.obstacle,
-        tutorial: this.state.tutorial,
-        id: this.state.id,
-      }),
-    })
-      .then((trick) => {
-        if (trick.ok) {
-          return trick.json();
-        } else {
-          throw Error(trick.status.Text);
-        }
-      })
-      .catch((error) => console.log(error));
+    this.props.addTrick(this.state);
   };
 
   render() {
