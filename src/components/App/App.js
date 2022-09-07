@@ -1,7 +1,7 @@
 import { Component } from "react";
 import "./App.css";
 import { getData } from "../apiCalls";
-import TrickContainer from "../TrickContainer/TrickContainer"
+import TrickContainer from "../TrickContainer/TrickContainer";
 import TrickForm from "../TrickForm/TrickForm";
 
 class App extends Component {
@@ -13,18 +13,17 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-    getData().then(data => {
-      this.setState({tricks: data[0]})
-    })
+    getData().then((data) => {
+      this.setState({ tricks: data[0] });
+    });
   };
 
   render() {
     return (
       <main className="App">
         <h1>Sick Trick Wish List</h1>
-        <TrickForm/>
-        <TrickContainer
-        tricks={this.state.tricks}/>
+        <TrickForm />
+        <TrickContainer tricks={this.state.tricks} />
       </main>
     );
   }

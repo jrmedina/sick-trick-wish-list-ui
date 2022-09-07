@@ -3,7 +3,6 @@ import TrickCard from "../TrickCard/TrickCard";
 import "../TrickContainer/TrickContainer.css";
 
 const TrickContainer = ({ tricks }) => {
-
   const trickCards = tricks.map((trick) => (
     <TrickCard
       stance={trick.stance}

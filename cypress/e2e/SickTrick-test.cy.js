@@ -37,14 +37,13 @@ describe("Sick Trick", () => {
     cy.get('input[name="name"]').should("have.value", "cool trick");
   });
 
-
   it("Should be able to add a new trick", () => {
-   cy.get('input[name="tutorial"]').type("cooltrick.com");
-   cy.get('input[name="name"]').type("cool trick");
-   cy.get('select[name="stance"]').select("Regular");
-   cy.get('select[name="obstacle"]').select("Pool");
-   cy.get("button").click();
-  })
+    cy.get('input[name="tutorial"]').type("cooltrick.com");
+    cy.get('input[name="name"]').type("cool trick");
+    cy.get('select[name="stance"]').select("Regular");
+    cy.get('select[name="obstacle"]').select("Pool");
+    cy.get("button").click();
+  });
 
   it("Should be able to POST a new trick", () => {
     cy.get('input[name="tutorial"]').type("cooltrick.com");
@@ -70,11 +69,11 @@ describe("Sick Trick", () => {
       .last()
       .find(".stance")
       .contains("regular");
-           cy.visit("http://localhost:3000")
-             .get(".TrickContainer")
-             .find(".TrickCard")
-             .last()
-             .find(".obstacle")
-             .contains("pool");
+    cy.visit("http://localhost:3000")
+      .get(".TrickContainer")
+      .find(".TrickCard")
+      .last()
+      .find(".obstacle")
+      .contains("pool");
   });
 });

@@ -1,8 +1,7 @@
 import React from "react";
-import "../TrickCard/TrickCard.css"
+import "../TrickCard/TrickCard.css";
 
-const TrickCard = ({stance, name, obstacle, tutorial}) => {
-    
+const TrickCard = ({ stance, name, obstacle, tutorial }) => {
   return (
     <div className="TrickCard">
       <p className="name">Name: {name} </p>
