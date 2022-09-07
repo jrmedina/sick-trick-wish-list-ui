@@ -1,9 +1,10 @@
 import React from "react";
+import "../TrickCard/TrickCard.css"
 
 const TrickCard = ({stance, name, obsticle, tutorial}) => {
     
   return (
-    <div>
+    <div className="TrickCard">
       <p>Stance:{stance}</p>
       <p>Name: {name} </p>
       <p>Obsticle:{obsticle}</p>

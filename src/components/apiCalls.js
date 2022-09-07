@@ -10,6 +10,8 @@ const apiCall = () => {
     .catch((error) => {
       return true;
     })
+
+    
 }
 
     const getData = () => {

@@ -1,16 +1,19 @@
 import React from "react";
 import TrickCard from "../TrickCard/TrickCard";
+import "../TrickContainer/TrickContainer.css";
+
 const TrickContainer = ({ tricks }) => {
-  console.log(tricks);
+
   const trickCards = tricks.map((trick) => (
     <TrickCard
       stance={trick.stance}
       name={trick.name}
       obsticle={trick.obsticle}
       tutorial={trick.tutorial}
+      key={trick.id}
     />
   ));
-  return <div>{trickCards}</div>;
+  return <div className="TrickContainer">{trickCards}</div>;
 };
 
 export default TrickContainer;
